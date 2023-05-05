@@ -4,6 +4,12 @@
 
 {% block content %}
 {% for post in posts %}
-  <article></article>
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">{{ post.author }}</a>
+      </div>
+    </div>
+  </article>
 {% endfor %}
 {% endblock %}
