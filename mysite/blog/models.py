@@ -18,7 +18,7 @@ class Post(models.Model):
         ordering = ['-date']
 
 class Comment(models.Model):
-    post = models.ForeignKey(to='Post', verbose_name='Straipsnis', on_delete=models.CASCADE)
+    post = models.ForeignKey(to='Post', verbose_name='Straipsnis', on_delete=models.CASCADE, related_name='comments')
     body = models.TextField(verbose_name='Tekstas', max_length=5000)
     author = models.ForeignKey(to=User, verbose_name='Autorius', on_delete=models.CASCADE)
     date = models.DateTimeField(verbose_name='Data', auto_now_add=True)
