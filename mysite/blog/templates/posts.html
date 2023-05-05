@@ -10,6 +10,8 @@
         <a class="mr-2">{{ post.author }}</a>
         <small class="text-muted">{{ post.date|date:"Y-m-d, f" }}</small>
       </div>
+      <h3><a class="article-title">{{ post.title }}</a></h3>
+      <p class="article-content">{{ post.text | safe }}</p>
     </div>
   </article>
 {% endfor %}
