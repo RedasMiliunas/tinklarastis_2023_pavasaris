@@ -15,7 +15,7 @@ class Post(models.Model):
     def num_comments(self):
         return len(Comment.objects.filter(post=self.pk))
     class Meta:
-        ordering = ['-date']
+        ordering = ['-date']    #ordering parametras kaip mes rikiuojame, prirasom '-', kad butu nuo naujausio iraso
 
 class Comment(models.Model):
     post = models.ForeignKey(to='Post', verbose_name='Straipsnis', on_delete=models.CASCADE, related_name='comments')
