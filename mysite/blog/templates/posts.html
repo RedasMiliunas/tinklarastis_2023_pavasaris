@@ -12,6 +12,7 @@
       </div>
       <h3><a class="article-title">{{ post.title }}</a></h3>
       <p class="article-content">{{ post.text | safe }}</p>
+        <p class="card-text"><a href="{% url 'post' post.pk %}">Skaityti daugiau</a></p>
         <a>Komentaru: {{ post.num_comments }}</a>
     </div>
   </article>
