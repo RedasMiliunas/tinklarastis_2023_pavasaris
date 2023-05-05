@@ -11,9 +11,8 @@ class Post(models.Model):
     author = models.ForeignKey(to=User, verbose_name='Autorius', on_delete=models.CASCADE)
     date = models.DateTimeField(verbose_name='Data', auto_now_add=True)
 
-
     def num_comments(self):
-        return len(Comment.objects.filter(post=self.pk))
+        return len(Comment.objects.filter(post=self.pk))    #sioje vietoje del post len (skaiciaus) parasyta funkcija
     class Meta:
         ordering = ['-date']    #ordering parametras kaip mes rikiuojame, prirasom '-', kad butu nuo naujausio iraso
 
