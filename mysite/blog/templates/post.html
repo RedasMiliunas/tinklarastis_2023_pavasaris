@@ -13,6 +13,13 @@
       <h3><a class="article-title">{{ post.title }}</a></h3>
       <p class="article-content">{{ post.text | safe }}</p>
         <a>Komentaru: {{ post.num_comments }}</a>
+      <hr>
+        <div>
+          {% for comment in post.comments.all %}
+          <small class="text-muted">{{ comment.author }} ({{ comment.date|date:"Y-m-d, f" }}) </small>
+          <p>{{ comment.body }}</p>
+          {% endfor %}
+        </div>
     </div>
   </article>
 <hr>
